@@ -1,8 +1,14 @@
-from apphelpers.peewee.db import create_pgdb_pool, create_base_model, created
+from apphelpers.db.peewee import create_pgdb_pool, create_base_model, created
 
-import settings
+from converge import settings
 
-db = create_pgdb_pool(database=settings.DB_NAME)
+db = create_pgdb_pool(
+        database=settings.DB_NAME,
+        host=settings.DB_HOST,
+        password=settings.DB_PASSWORD,
+        user=settings.DB_USER,
+        max_connections=settings.DB_TRANSACTIONS_ENABLED
+    )
 BaseModel = create_base_model(db)
 
 
