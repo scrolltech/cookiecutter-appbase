@@ -5,3 +5,7 @@ peewee
 celery
 uvicorn
 honcho
+hug
+redis
+psycopg2
+gunicorn
