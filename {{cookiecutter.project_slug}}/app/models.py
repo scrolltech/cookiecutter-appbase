@@ -7,7 +7,7 @@ db = create_pgdb_pool(
         host=settings.DB_HOST,
         password=settings.DB_PASSWORD,
         user=settings.DB_USER,
-        max_connections=settings.DB_TRANSACTIONS_ENABLED
+        max_connections=settings.DB_MAXCONNECTIONS
     )
 BaseModel = create_base_model(db)
 
